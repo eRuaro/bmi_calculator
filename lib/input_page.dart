@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'input_data.dart';
 
+const bottom_container_height = 70.0;
+const color_card = 0xFF1D1E33;
+const bottom_container_color = 0xFFEB1555;
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -22,12 +26,12 @@ class _InputPageState extends State<InputPage> {
                   children: [
                     Expanded(
                       child: InputData(
-                          color: Color(0xFF1D1E33),
+                          color: Color(color_card),
                       ),
                     ),
                     Expanded(
                       child: InputData(
-                        color: Color(0xFF1D1E33),
+                        color: Color(color_card),
                       ),
                     ),
                   ],
@@ -38,7 +42,7 @@ class _InputPageState extends State<InputPage> {
                   children: [
                     Expanded(
                       child: InputData(
-                        color: Color(0xFF1D1E33),
+                        color: Color(color_card),
                       ),
                     ),
                   ],
@@ -49,17 +53,23 @@ class _InputPageState extends State<InputPage> {
                   children: [
                     Expanded(
                       child: InputData(
-                        color: Color(0xFF1D1E33),
+                        color: Color(color_card),
                       ),
                     ),
                     Expanded(
                       child: InputData(
-                        color: Color(0xFF1D1E33),
+                        color: Color(color_card),
                       ),
                     ),
                   ],
                 ),
               ),
+              Container(
+                color: Color(bottom_container_color),
+                margin: EdgeInsets.only(top: 10),
+                width: double.infinity,
+                height: bottom_container_height,
+              )
             ],
           ),),
     );
