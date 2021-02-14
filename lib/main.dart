@@ -8,14 +8,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: InputPage(),
-        theme: ThemeData(
-          //App Bar Theme, Color Palette
-          primaryColor: Color(0xFF252849),
-          //Foreground color for Widgets Theme
-          accentColor: Colors.teal,
-          scaffoldBackgroundColor: Color(0xFF252849),
-        ));
+      home: InputPage(),
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF252849),
+        //Foreground color for Widgets Theme
+        scaffoldBackgroundColor: Color(0xFF252849),
+        textTheme: TextTheme(
+          bodyText2: TextStyle(
+            fontSize: 24,
+          ),
+        ),
+      ),
+    );
   }
 }
 
@@ -35,18 +39,9 @@ class _InputPageState extends State<InputPage> {
       body: Center(
         child: Text(
           'Body Text Centered',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-        ),
-        onPressed: null,
-      ),
+      
     );
   }
 }
