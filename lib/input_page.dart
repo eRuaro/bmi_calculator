@@ -270,6 +270,7 @@ class _InputPageState extends State<InputPage> {
             //Bottom Button
             BottomButton(
               onTap: () {
+                //Create new instance of Functionality Class
                 Calculator calc = Calculator(
                   height: height,
                   weight: weight,
@@ -279,6 +280,7 @@ class _InputPageState extends State<InputPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ResultPage(
+                      //Functionality
                       bmiResult: calc.calculateBMI(),
                       bmiInterpretation: calc.getInterpretation(),
                       resultText: calc.getResult(),
