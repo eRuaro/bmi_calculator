@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'input_data.dart';
 import 'container_content.dart';
+import 'package:bmi_calculator/round_icon_button.dart';
 
 enum GenderType {
   male,
@@ -26,6 +27,7 @@ class _InputPageState extends State<InputPage> {
 
   int height = 170;
   int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +93,7 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: InputData(
-                      color: kColorCard,
+                      color: kInactiveColorCard,
                       cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -163,29 +165,45 @@ class _InputPageState extends State<InputPage> {
                               style: kLabelTextStyle,
                             ),
                             SizedBox(
-                            height: 10,
-                          ),
-                            Text(
-                              weight.toString(),
-                              style: kNumberTextStyle,
+                              height: 10,
                             ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FloatingActionButton(
-                                onPressed: (){},
-                                child: Icon(
-                                  Icons.,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  weight.toString(),
+                                  style: kNumberTextStyle,
                                 ),
-                              ),
-                              FloatingActionButton(
-                                onPressed: (){},
-                                child: Icon(
-                                  Icons.add,
+                                Text(
+                                  ' kg',
+                                  style: kLabelTextStyle,
+                                )
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                RoundIconButton(
+                                  icon: FontAwesomeIcons.minus,
+                                  onPress: () {
+                                    setState(() {
+                                      weight--;
+                                    });
+                                  },
                                 ),
-                              ),
-                            ],
-                          ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                RoundIconButton(
+                                  icon: FontAwesomeIcons.plus,
+                                  onPress: () {
+                                    setState(() {
+                                      weight++;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       ),
@@ -200,8 +218,44 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Height',
+                              'Age',
                               style: kLabelTextStyle,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  age.toString(),
+                                  style: kNumberTextStyle,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                RoundIconButton(
+                                  icon: FontAwesomeIcons.minus,
+                                  onPress: () {
+                                    setState(() {
+                                      age--;
+                                    });
+                                  },
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                RoundIconButton(
+                                  icon: FontAwesomeIcons.plus,
+                                  onPress: () {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  },
+                                ),
+                              ],
                             ),
                           ],
                         ),
