@@ -17,3 +17,24 @@ const kNumberTextStyle = TextStyle(
   fontSize: 24,
   fontWeight: FontWeight.w600,
 );
+
+const kTitleTextStyle = TextStyle(
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
+);
+
+const kResultTextStyle = TextStyle(
+  color: Color(0xFF24d876),
+  fontSize: 22,
+  fontWeight: FontWeight.bold,
+
+);
+
+const kBMITextStyle = TextStyle(
+  fontSize: 100,
+  fontWeight: FontWeight.bold,
+);
+
+const kBodyTextStyle = TextStyle(
+  fontSize: 22,
+);

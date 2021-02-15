@@ -1,11 +1,12 @@
 import 'package:bmi_calculator/constants.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bmi_calculator/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'input_data.dart';
 import 'container_content.dart';
 import 'package:bmi_calculator/round_icon_button.dart';
-import 'package:bmi_calculator/result_page.dart';
+import 'package:bmi_calculator/bottom_button.dart';
+import 'package:bmi_calculator/bmi_calculator.dart';
 
 enum GenderType {
   male,
@@ -266,30 +267,27 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            GestureDetector(
+            //Bottom Button
+            BottomButton(
               onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  '/2nd',
+                Calculator calc = Calculator(
+                  height: height,
+                  weight: weight,
                 );
-              },
-              child: Container(
-                color: Color(kBottomContainerColor),
-                margin: EdgeInsets.only(top: 10),
-                width: double.infinity,
-                height: kBottomContainerHeight,
-                child: Center(
-                  child: Text(
-                    'Calculate',
-                    style: TextStyle(
-                      fontSize: 28,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(
+                      bmiResult: calc.calculateBMI(),
+                      bmiInterpretation: calc.getInterpretation(),
+                      resultText: calc.getResult(),
                     ),
                   ),
-                ),
-              ),
-            )
+                );
+              },
+              buttonTitle: 'Calculate',
+            ),
           ],
         ),
       ),
