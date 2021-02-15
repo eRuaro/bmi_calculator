@@ -25,6 +25,7 @@ class _InputPageState extends State<InputPage> {
   GenderType selected_gender;
 
   int height = 170;
+  int weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -153,12 +154,58 @@ class _InputPageState extends State<InputPage> {
                     child: InputData(
                       onPress: () {},
                       color: kInactiveColorCard,
+                      cardChild: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Weight',
+                              style: kLabelTextStyle,
+                            ),
+                            SizedBox(
+                            height: 10,
+                          ),
+                            Text(
+                              weight.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FloatingActionButton(
+                                onPressed: (){},
+                                child: Icon(
+                                  Icons.,
+                                ),
+                              ),
+                              FloatingActionButton(
+                                onPressed: (){},
+                                child: Icon(
+                                  Icons.add,
+                                ),
+                              ),
+                            ],
+                          ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   Expanded(
                     child: InputData(
                       color: kInactiveColorCard,
                       onPress: () {},
+                      cardChild: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Height',
+                              style: kLabelTextStyle,
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
